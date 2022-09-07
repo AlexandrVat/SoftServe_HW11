@@ -1,16 +1,18 @@
 const { Console } = require("console");
 
-import { username } from 'app.js';
-console.log(username);
 
-function time()
+
+function time(curUser)
 {
     let tv =  new Date().getHours();
-        
-    if (tv > 5.5 && tv <= 11.5) return 'Good morning';
-    else if(tv > 11.5 && tv <= 17.5) return 'Good day';
-    else if(tv > 17.5 && tv <= 23.5) return 'Good evening';
-    else return 'Good night';
+    let d = new Date(); 
+   // console.log(curUser);    
+    if (tv > 5.5 && tv <= 11.5) return `<p>${d.toString()}</p> <p>Good morning ${curUser}<p>`;
+    else if(tv > 11.5 && tv <= 17.5) return `<p>${d.toString()}</p> <p>Good day ${curUser}<p>`;
+    else if(tv > 17.5 && tv <= 23.5) return `<p>${d.toString()}</p> <p>Good evening ${curUser}<p>`;
+    else return `<p>${d.toString()}</p> <p>Good night ${curUser}<p>`;
 }
 
-console.log(time());
+module.exports.ntime = time; 
+
+//console.log(time());
